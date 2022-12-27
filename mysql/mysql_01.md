@@ -152,9 +152,21 @@ select * from stu order by math desc, english asc;
 ```sql
 -- 聚合函数：count()、max()、min()、sum()、avg()。
 -- 聚合函数不会计算null值
-select avg(math) from stu group by sex;
+-- 男女同学各自的数学平均分
+select sex, avg(math) from stu group by sex;
+-- 男女同学各自的数学平均分以及人数    
+select sex, avg(math), count(*) from stu group by sex;
+-- 男女同学数学大于70分的平均分
+select sex, avg(math), count(*) from stu where math >= 70 group by sex;
+-- 分组后人数大于2的
+select sex, avg(math), count(*) from stu where math >= 70 group by sex having count(*) > 2;
 ```
-
+分页查询
+```sql
+select * from stu limit 起始索引, 查询条目数;
+-- 查询第i页，每页显示j条数据
+select * from stu limit (i-1) * j, j;
+```
 
 
 
