@@ -51,6 +51,50 @@ insert into emp(id, ename, joindate, salary, bonus) values (null,'李四','1999-
 多对多
 ```
 # 多表查询
+内连接
 ```text
+--隐式内连接
+SELECT 字段列表 FROM 表1,表2... WHERE 条件;
 
+-- 显示内连接
+SELECT 字段列表 FROM 表1 [INNER] JOIN 表2 ON 条件;
+```
+外连接
+```text
+左外连接
+SELECT 字段列表 FROM 表1 LEFT [OUTER] JOIN 表2 ON 条件;
+
+-- 右外连接
+SELECT 字段列表 FROM 表1 RIGHT [OUTER] JOIN 表2 ON 条件;
+```
+![](img/表连接.png)
+# 子查询
+```text
+查询中嵌套查询，称嵌套查询为子查询
+
+单行单列:作为条件值，使用=!=><等进行条件判断
+SELECT 字段列表 FROM 表 WHERE 字段名 =(子查询);
+
+多行单列:作为条件值，使用in等关键字进行条件判断
+SELECT 字段列表 FROM 表 WHERE 字段名 in(子查询);
+
+多行多列:作为虚拟表
+SELECT 字段列表 FROM(子查询)WHERE 条件;
+```
+# 事务
+```text
+begin：开启事务
+commit：提交事务
+rollback：回滚事务
+```
+四大特性
+```text
+原子性(Atomicity):事务是不可分割的最小操作单位，要么同时成功，要么同时失败
+一致性(Consistency):事务完成时，必须使所有的数据都保持一致状态。 
+隔离性(Isolation):多个事务之间，操作的可见性
+持久性(Durability):事务一旦提交或回滚，它对数据库中的数据的改变就是永久的
+```
+```text
+查看当前是否自动提交事务
+select @@autocommit; //1自动提交，0取消自动提交
 ```
