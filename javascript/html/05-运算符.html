@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+</head>
+<body>
+<script>
+
+    /**
+     * ==：判断类型是否一样，如果不一样，则进行类型转换，再去比较值
+     *
+     * ===：全等于。判断类型是否一样，如果不一样，直接返回false，再去比较值
+     */
+    // var a = 20;
+    // var a2 = "20";
+    // alert(a == a2);
+    // alert(a === a2);
+
+    /**
+     * 类型转换
+     * 1、其他类型转number
+     *      string转number，如果string不是一个数字，则转为NaN
+     *      boolean：true为1，false为0
+     * 2、其他类型转boolean
+     *      number：0和NaN转false，其他转true
+     *      string：空字符转false，其他转true
+     *      null：转false
+     *      undefined：转false
+     */
+        // +：正号，后面需要跟着number，发现不是number会自动帮忙转换
+    var str = +"20";
+    var str2 = "20";
+    alert(parseInt(str2) + 2);
+    var flag = +true;
+    alert(parseInt(flag));
+
+    //健壮性判断
+    // if (str != null && str.length > 0) {
+    if (str) {
+        alert("为空");
+    } else {
+        alert("不为空");
+    }
+
+</script>
+</body>
+</html>

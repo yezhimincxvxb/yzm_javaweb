@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window对象</title>
+</head>
+<body>
+<script>
+    // alert
+    window.alert("弹窗口")
+
+    // confirm
+    let confirm = window.confirm("确认删除？");
+    if (confirm) {
+        // 删除逻辑
+    }
+
+    // 定时器
+    setTimeout(function () {
+        alert("2秒后，只弹一次")
+    }, 2000);
+
+    setInterval(function () {
+        alert("每过3秒就弹一次")
+    }, 3000)
+</script>
+</body>
+</html>
